@@ -9,14 +9,14 @@ public class QuestionBuilder {
     }
 
     public static QuestionBuilder getInstance() {
-        if(instance == null) instance = new QuestionBuilder();
+        if (instance == null) instance = new QuestionBuilder();
         return instance;
     }
 
-    public Question bulidQuestion(int min, int max) {
-        int x = min + (int)(Math.random() * (max - min));
-        int y = 2 + (int)(Math.random() * (12 - 2));
-        return new Question(x, y);
+    public Question bulidQuestion(int mae) {
+//        int x = min + (int)(Math.random() * (max - min));
+        int y = 2 + (int) (Math.random() * (12 - 2));
+        return new Question(mae, y);
     }
 
 }
