@@ -19,9 +19,9 @@ public class Question {
     }
 
     public void setChoice() {
-        int subtractNum = (int)(Math.random() * (3));
+        int subtractNum = (int) (Math.random() * (3));
         int first = answer - (subtractNum * multiplyee);
-        if(first <= 0) first = answer;
+        if (first <= 0) first = answer;
         for (int i = 0; i < 4; i++) {
             choice[i] = first + (i * multiplyee);
         }

@@ -26,13 +26,22 @@ public class SecondCon {
     Label score;
 
     @FXML
-    Label question;
+    Label questionLabel;
+
+    private Question question;
+
+    public void initialize(){
+        QuestionBuilder q = QuestionBuilder.getInstance();
+        question = q.bulidQuestion(4);
+    }
 
     public void handleEnter(){
-        Random r = new Random();
-        int num = r.nextInt(50);
 
-        updateNewQuestion("3 x 4", r.nextInt(50), r.nextInt(50), r.nextInt(50), r.nextInt(50));
+        String quiz = String.format("%d X %d", question.getX(), question.getY());
+        question.setChoice();
+
+        updateNewQuestion(quiz, question.getChoice(0), question.getChoice(1), question.getChoice(2),question.getChoice(3));
+
     }
 
     public void updateTimer(int second){
@@ -55,6 +64,6 @@ public class SecondCon {
         button3.setText(String.valueOf(ans3));
         button4.setText(String.valueOf(ans4));
 
-        question.setText(quest);
+        questionLabel.setText(quest);
     }
 }

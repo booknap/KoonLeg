@@ -5,7 +5,6 @@ import java.util.Scanner;
 public class ConsoleTest {
 
     public static void main(String[] args) {
-
         Scanner sc = new Scanner(System.in);
 //        int input = 5;
 //        int multiplier = 12;
@@ -22,14 +21,14 @@ public class ConsoleTest {
 //        }
 
         QuestionBuilder q = QuestionBuilder.getInstance();
-        for(int i = 0; i < 10; i++) {
-            Question question = q.bulidQuestion(2, 4);
+        for (int i = 0; i < 10; i++) {
+            Question question = q.bulidQuestion(4);
             System.out.printf("%d) %d X %d\n", i + 1, question.getX(), question.getY());
             question.setChoice();
-            for(int j = 0; j < 4; j++) {
+            for (int j = 0; j < 4; j++) {
                 System.out.printf(" %d. %d\n", j + 1, question.getChoice(j));
             }
-            if(question.getAnswer() == sc.nextInt()) System.out.println("Correct\n");
+            if (question.getAnswer() == sc.nextInt()) System.out.println("Correct\n");
             else System.out.println("Wrong\n");
         }
 

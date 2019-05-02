@@ -30,7 +30,7 @@
                   <Font name="Comic Sans MS" size="30.0" />
                </font>
             </Label>
-            <Label fx:id="question" layoutX="164.0" layoutY="188.0" text="3 x 12">
+            <Label fx:id="questionLabel" layoutX="164.0" layoutY="188.0" text="3 x 12">
                <font>
                   <Font name="Comic Sans MS" size="60.0" />
                </font>
