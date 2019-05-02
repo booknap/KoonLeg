@@ -13,10 +13,8 @@ public class QuestionBuilder {
         return instance;
     }
 
-    public Question bulidQuestion(int min, int max) {
-        int x = min + (int)(Math.random() * (max - min));
-        int y = 2 + (int)(Math.random() * (12 - 2));
-        return new Question(x, y);
+    public Question bulidQuestion() {
+        return new Question();
     }
 
 }
