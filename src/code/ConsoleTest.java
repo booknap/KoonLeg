@@ -26,8 +26,7 @@ public class ConsoleTest {
         QuestionBuilder q = QuestionBuilder.getInstance();
         Question question = q.bulidQuestion();
         for (int i = 0; i < 10; i++) {
-            int y = 2 + (int) (Math.random() * (12 - 2));
-            question.setXY(2, y);
+            question.setX(2);
             System.out.printf("%d) %d X %d\n", i + 1, question.getX(), question.getY());
             question.setChoice();
             for (int j = 0; j < 4; j++) {

@@ -30,9 +30,9 @@ public class Question {
         return choice[index];
     }
 
-    public void setXY(int x, int y) {
+    public void setX(int x) {
         this.x = x;
-        this.y = y;
+        this.y = 2 + (int) (Math.random() * (12 - 2));;
         this.answer = x * y;
     }
 

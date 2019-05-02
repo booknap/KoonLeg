@@ -32,7 +32,7 @@ public class SecondCon {
 
     public void initialize(){
         QuestionBuilder q = QuestionBuilder.getInstance();
-        question = q.bulidQuestion(4);
+        question = q.bulidQuestion();
     }
 
     public void handleEnter(){
