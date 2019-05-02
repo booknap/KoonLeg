@@ -2,9 +2,15 @@ package code;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.util.Random;
 
 public class SecondCon {
@@ -31,7 +37,8 @@ public class SecondCon {
 
     private Question question;
     private int multiplicand;
-    private int count = 0;
+
+    public static int count = 0;
 
     public void initialize(){
         this.multiplicand = FirstCon.multiplicand;
@@ -64,7 +71,33 @@ public class SecondCon {
     }
 
     public void timeOut(){
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("ThirdUI.fxml"));
+            Scene thirdScene = new Scene(root);
 
+            // New window (Stage)
+            Stage stage = new Stage();
+
+            stage.setScene(thirdScene);
+            stage.setTitle("Multiply Game");
+            stage.setResizable(false);
+            stage.sizeToScene();
+
+            // Specifies the modality for new window.
+            stage.initModality(Modality.WINDOW_MODAL);
+
+
+            stage.show();
+        }catch (IOException e){
+            System.out.println("Can not open ThirdUI.fxml");
+        }
+
+        getStage().close();
+
+    }
+
+    public Stage getStage(){
+        return (Stage) button1.getScene().getWindow();
     }
 
     public void updateScore(int sc){
