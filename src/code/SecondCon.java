@@ -1,5 +1,6 @@
 package code;
 
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -40,37 +41,45 @@ public class SecondCon {
 
     public static int count = 0;
 
-    public void initialize(){
+    public void initialize() {
         this.multiplicand = FirstCon.multiplicand;
         QuestionBuilder q = QuestionBuilder.getInstance();
         question = q.bulidQuestion();
 
         setNewQuestion(multiplicand);
         updateScore(count);
+
+        GameTimer gameTimer = new GameTimer();
+        gameTimer.countDown(() -> {
+            Platform.runLater(() -> {
+                String time = Integer.toString(gameTimer.getTime());
+                timer.setText(time);
+            });
+        });
     }
 
-    public void handleEnter(ActionEvent event){
+    public void handleEnter(ActionEvent event) {
         int ans = 0;
 
         Object source = event.getSource();
-        if (source instanceof Button){
+        if (source instanceof Button) {
             Button b = (Button) source;
             ans = Integer.parseInt(b.getText());
         }
 
-        if(question.check(ans)) {
+        if (question.check(ans)) {
             count++;
             updateScore(count);
         }
         setNewQuestion(multiplicand);
     }
 
-    public void updateTimer(int second){
+    public void updateTimer(int second) {
         String stringTime = String.valueOf(second);
         timer.setText(stringTime);
     }
 
-    public void timeOut(){
+    public void timeOut() {
         try {
             Parent root = FXMLLoader.load(getClass().getResource("ThirdUI.fxml"));
             Scene thirdScene = new Scene(root);
@@ -88,7 +97,7 @@ public class SecondCon {
 
 
             stage.show();
-        }catch (IOException e){
+        } catch (IOException e) {
             System.out.println("Can not open ThirdUI.fxml");
         }
 
@@ -96,16 +105,16 @@ public class SecondCon {
 
     }
 
-    public Stage getStage(){
+    public Stage getStage() {
         return (Stage) button1.getScene().getWindow();
     }
 
-    public void updateScore(int sc){
+    public void updateScore(int sc) {
         String stringTime = String.valueOf(sc);
         score.setText(stringTime);
     }
 
-    private void updateNewQuestion(String quest, int ans1, int ans2, int ans3, int ans4){
+    private void updateNewQuestion(String quest, int ans1, int ans2, int ans3, int ans4) {
         button1.setText(String.valueOf(ans1));
         button2.setText(String.valueOf(ans2));
         button3.setText(String.valueOf(ans3));
@@ -114,12 +123,12 @@ public class SecondCon {
         questionLabel.setText(quest);
     }
 
-    private void setNewQuestion(int num){
+    private void setNewQuestion(int num) {
         question.setX(num);
         String quiz = String.format("%d X %d", question.getX(), question.getY());
         question.setChoice();
 
-        updateNewQuestion(quiz, question.getChoice(0), question.getChoice(1), question.getChoice(2),question.getChoice(3));
+        updateNewQuestion(quiz, question.getChoice(0), question.getChoice(1), question.getChoice(2), question.getChoice(3));
 
     }
 }
