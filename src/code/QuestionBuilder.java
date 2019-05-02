@@ -1,4 +1,4 @@
-package sample;
+package code;
 
 public class QuestionBuilder {
 
@@ -14,8 +14,6 @@ public class QuestionBuilder {
     }
 
     public Question bulidQuestion() {
-//        int x = min + (int)(Math.random() * (max - min));
-//        int y = 2 + (int) (Math.random() * (12 - 2));
         return new Question();
     }
 
