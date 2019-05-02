@@ -8,13 +8,15 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.image.ImageView;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-import java.util.Random;
 
-public class SecondCon {
+import static code.Main.newScreen;
+
+public class InGameController {
     @FXML
     Button button1;
 
@@ -36,13 +38,17 @@ public class SecondCon {
     @FXML
     Label questionLabel;
 
+    @FXML
+    ImageView bg;
+
+
     private Question question;
     private int multiplicand;
 
     public static int count = 0;
 
     public void initialize() {
-        this.multiplicand = FirstCon.multiplicand;
+        this.multiplicand = HomeController.multiplicand;
         QuestionBuilder q = QuestionBuilder.getInstance();
         question = q.bulidQuestion();
 
@@ -52,6 +58,8 @@ public class SecondCon {
         GameTimer gameTimer = new GameTimer();
         gameTimer.countDown(() -> {
             Platform.runLater(() -> {
+                if(gameTimer.getTime() == 0) timeOut();
+
                 String time = Integer.toString(gameTimer.getTime());
                 timer.setText(time);
             });
@@ -69,38 +77,17 @@ public class SecondCon {
 
         if (question.check(ans)) {
             count++;
-            updateScore(count);
-        }
+        }else count--;
+        updateScore(count);
+
         setNewQuestion(multiplicand);
     }
 
-    public void updateTimer(int second) {
-        String stringTime = String.valueOf(second);
-        timer.setText(stringTime);
-    }
-
     public void timeOut() {
-        try {
-            Parent root = FXMLLoader.load(getClass().getResource("ThirdUI.fxml"));
-            Scene thirdScene = new Scene(root);
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource("/ScoreBoardUI.fxml"));
 
-            // New window (Stage)
-            Stage stage = new Stage();
-
-            stage.setScene(thirdScene);
-            stage.setTitle("Multiply Game");
-            stage.setResizable(false);
-            stage.sizeToScene();
-
-            // Specifies the modality for new window.
-            stage.initModality(Modality.WINDOW_MODAL);
-
-
-            stage.show();
-        } catch (IOException e) {
-            System.out.println("Can not open ThirdUI.fxml");
-        }
-
+        newScreen("Multiply Game", loader);
         getStage().close();
 
     }
