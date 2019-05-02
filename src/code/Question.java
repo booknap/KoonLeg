@@ -30,6 +30,11 @@ public class Question {
         return choice[index];
     }
 
+    public boolean check(int input) {
+        if(input == answer) return true;
+        else return false;
+    }
+
     public void setX(int x) {
         this.x = x;
         this.y = 2 + (int) (Math.random() * (12 - 2));;

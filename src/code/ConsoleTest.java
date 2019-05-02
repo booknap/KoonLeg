@@ -32,8 +32,11 @@ public class ConsoleTest {
             for (int j = 0; j < 4; j++) {
                 System.out.printf(" %d. %d\n", j + 1, question.getChoice(j));
             }
-            if (question.getAnswer() == sc.nextInt()) System.out.println("Correct\n");
-            else System.out.println("Wrong\n");
+            if(question.check(sc.nextInt())) {
+                System.out.println("Correct");
+            } else {
+                System.out.println("Wrong");
+            }
 
         }
 
