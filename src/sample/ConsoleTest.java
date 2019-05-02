@@ -39,10 +39,12 @@ public class ConsoleTest {
 //        } else {
 //            System.out.println("Wrong");
 //        }
-
         QuestionBuilder q = QuestionBuilder.getInstance();
+        Question question = q.bulidQuestion();
+
         for (int i = 0; i < 10; i++) {
-            Question question = q.bulidQuestion(4);
+            int y = 2 + (int) (Math.random() * (12 - 2));
+            question.setXY(2, y);
             System.out.printf("%d) %d X %d\n", i + 1, question.getX(), question.getY());
             question.setChoice();
             for (int j = 0; j < 4; j++) {
