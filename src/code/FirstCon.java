@@ -1,5 +1,6 @@
 package code;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -14,7 +15,16 @@ public class FirstCon {
     @FXML
     Button button2;
 
-    public void handleEnter(){
+    public static int multiplicand;
+
+
+    public void handleEnter(ActionEvent event){
+        Object source = event.getSource();
+        if (source instanceof Button){
+            Button b = (Button) source;
+            multiplicand = Integer.parseInt(b.getText());
+        }
+
         try {
             Parent root = FXMLLoader.load(getClass().getResource("SecondUI.fxml"));
             Scene secondScene = new Scene(root);
@@ -39,6 +49,7 @@ public class FirstCon {
         getStage().close();
 
     }
+
     public Stage getStage(){
         return (Stage) button2.getScene().getWindow();
     }
