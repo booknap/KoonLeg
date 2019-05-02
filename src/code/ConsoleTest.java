@@ -25,8 +25,8 @@ public class ConsoleTest {
         Scanner sc = new Scanner(System.in);
         QuestionBuilder q = QuestionBuilder.getInstance();
         Question question = q.bulidQuestion();
-        for(int i = 0; i < 10; i++) {
-            int y = 2 + (int)(Math.random() * (12 - 2));
+        for (int i = 0; i < 10; i++) {
+            int y = 2 + (int) (Math.random() * (12 - 2));
             question.setXY(2, y);
             System.out.printf("%d) %d X %d\n", i + 1, question.getX(), question.getY());
             question.setChoice();
@@ -36,6 +36,7 @@ public class ConsoleTest {
             if (question.getAnswer() == sc.nextInt()) System.out.println("Correct\n");
             else System.out.println("Wrong\n");
 
-    }
+        }
 
+    }
 }
