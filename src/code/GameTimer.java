@@ -6,7 +6,7 @@ import java.util.TimerTask;
 public class GameTimer {
 
     // Default time
-    private int time = 60;
+    private int time = 5;
 
     public void countDown(Runnable tick) {
         Timer timer = new Timer();
