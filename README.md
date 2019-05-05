@@ -16,7 +16,11 @@
    `GameTimer` class has been behavioral decoposed to only count time and does given action without obligation of interacting
    with domain layer object.
    
----
+### Class diagram  
+
+![class-diagram](https://github.com/booknap/KoonLeg/blob/master/class-diagram.png)
+   
+-----
 An assignment for *Software specification design* class of 2nd semester 2019.  
 
 Group members:
