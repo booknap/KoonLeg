@@ -41,7 +41,7 @@ public class Main extends Application {
 
             stage.show();
         } catch (IOException e) {
-            System.out.println("Can not open fxml file");
+            e.printStackTrace();
         }
 
     }

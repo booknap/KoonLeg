@@ -19,7 +19,7 @@
    <children>
       <Pane prefHeight="800.0" prefWidth="500.0">
          <children>
-            <ImageView fx:id="bg" fitHeight="800.0" fitWidth="500.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="background" fitHeight="800.0" fitWidth="500.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@bg.jpg" />
                </image>
@@ -35,6 +35,28 @@
             <Button layoutX="270.0" layoutY="400.0" mnemonicParsing="false" onAction="#handleEnter" prefHeight="50.0" prefWidth="150.0" text="9" />
             <Button layoutX="270.0" layoutY="500.0" mnemonicParsing="false" onAction="#handleEnter" prefHeight="50.0" prefWidth="150.0" text="11" />
             <Button layoutX="175.0" layoutY="600.0" mnemonicParsing="false" onAction="#handleEnter" prefHeight="50.0" prefWidth="150.0" text="12" />
+            <Label layoutX="80.0" layoutY="70.0" prefHeight="21.0" prefWidth="75.0" text="High sorce:" />
+            <Label layoutX="270.0" layoutY="70.0" prefHeight="21.0" prefWidth="75.0" text="High sorce:" />
+            <Label layoutX="80.0" layoutY="170.0" prefHeight="21.0" prefWidth="75.0" text="High sorce:" />
+            <Label layoutX="80.0" layoutY="270.0" prefHeight="21.0" prefWidth="75.0" text="High sorce:" />
+            <Label layoutX="80.0" layoutY="370.0" prefHeight="21.0" prefWidth="75.0" text="High sorce:" />
+            <Label layoutX="80.0" layoutY="470.0" prefHeight="21.0" prefWidth="75.0" text="High sorce:" />
+            <Label layoutX="270.0" layoutY="470.0" prefHeight="21.0" prefWidth="75.0" text="High sorce:" />
+            <Label layoutX="270.0" layoutY="170.0" prefHeight="21.0" prefWidth="75.0" text="High sorce:" />
+            <Label layoutX="270.0" layoutY="270.0" prefHeight="21.0" prefWidth="75.0" text="High sorce:" />
+            <Label layoutX="270.0" layoutY="370.0" prefHeight="21.0" prefWidth="75.0" text="High sorce:" />
+            <Label layoutX="175.0" layoutY="570.0" prefHeight="21.0" prefWidth="75.0" text="High sorce:" />
+            <Label fx:id="label2" layoutX="160.0" layoutY="70.0" prefHeight="21.0" prefWidth="55.0" text="-" />
+            <Label fx:id="label3" layoutX="350.0" layoutY="70.0" prefHeight="21.0" prefWidth="55.0" text="-" />
+            <Label fx:id="label5" layoutX="350.0" layoutY="170.0" prefHeight="21.0" prefWidth="55.0" text="-" />
+            <Label fx:id="label7" layoutX="350.0" layoutY="270.0" prefHeight="21.0" prefWidth="55.0" text="-" />
+            <Label fx:id="label9" layoutX="350.0" layoutY="370.0" prefHeight="21.0" prefWidth="55.0" text="-" />
+            <Label fx:id="label11" layoutX="350.0" layoutY="470.0" prefHeight="21.0" prefWidth="55.0" text="-" />
+            <Label fx:id="label12" layoutX="255.0" layoutY="570.0" prefHeight="21.0" prefWidth="55.0" text="-" />
+            <Label fx:id="label4" layoutX="160.0" layoutY="170.0" prefHeight="21.0" prefWidth="55.0" text="-" />
+            <Label fx:id="label6" layoutX="160.0" layoutY="270.0" prefHeight="21.0" prefWidth="55.0" text="-" />
+            <Label fx:id="label8" layoutX="160.0" layoutY="370.0" prefHeight="21.0" prefWidth="55.0" text="-" />
+            <Label fx:id="label10" layoutX="160.0" layoutY="470.0" prefHeight="21.0" prefWidth="55.0" text="-" />
          </children>
       </Pane>
    </children>

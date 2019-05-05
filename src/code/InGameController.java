@@ -45,9 +45,10 @@ public class InGameController {
     private Question question;
     private int multiplicand;
 
-    public static int count = 0;
+    public static int count;
 
     public void initialize() {
+        count = 0;
         this.multiplicand = HomeController.multiplicand;
         QuestionBuilder q = QuestionBuilder.getInstance();
         question = q.bulidQuestion();
@@ -84,6 +85,7 @@ public class InGameController {
     }
 
     public void timeOut() {
+        HomeController.highscore.addScore(multiplicand, count);
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource("/ScoreBoardUI.fxml"));
 
